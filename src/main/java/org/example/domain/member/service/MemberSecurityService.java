@@ -28,7 +28,7 @@ public class MemberSecurityService implements UserDetailsService {
     public UserDetails loadUserByUsername(String memberId) throws UsernameNotFoundException {
         Member member = findByMemberId(memberId);
         List<GrantedAuthority> authorities = getAuthorities(member);
-        return new User(member.getMemberId(), member.getMemberPwd(), authorities);
+        return new User(member.getUsername(), member.getPassword(), authorities);
     }
 
     private Member findByMemberId(String memberId){
@@ -39,13 +39,12 @@ public class MemberSecurityService implements UserDetailsService {
         return _member.get();
     }
     private List<GrantedAuthority> getAuthorities(Member member){
-        String memberId=member.getMemberId();
+        String memberId=member.getUsername();
         List<GrantedAuthority> authorities = new ArrayList<>();
         if ("admin".equals(memberId)) {
-            authorities.add(new SimpleGrantedAuthority(MemberRole.ADMIN.getValue()));
+           // authorities.add(new SimpleGrantedAuthority(MemberRole.ROLE_ADMIN));
         } else {
-            authorities.add(new SimpleGrantedAuthority(MemberRole.MEMBER.getValue()));
-            this.memberRepository.save(member);
+           // authorities.add(new SimpleGrantedAuthority(MemberRole.ROLE_USER));
         }
         return authorities;
     }
