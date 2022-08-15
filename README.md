@@ -1,4 +1,4 @@
-# sb_security_session
+# sb_security
 
 인스타그램 클론 코딩 <br>
 
