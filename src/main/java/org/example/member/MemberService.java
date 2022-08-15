@@ -18,7 +18,7 @@ public class MemberService {
         member.setMemberId(id);
         member.setMemberPwd(passwordEncoder.encode(member_pwd));
         member.setMemberEmail(member_email);
-        member.setMemberLoginStatus(member_login_status);
+        member.setLoginStatus(member_login_status);
         this.memberRepository.save(member);
         return member;
     }

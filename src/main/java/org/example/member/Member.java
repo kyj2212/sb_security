@@ -13,7 +13,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="member_uid")
-    private Long memberUid;
+    private Long id;
 
     @Column(name="member_name")
     private String memberName;
@@ -28,6 +28,6 @@ public class Member {
     private String memberEmail;
 
     @Column(name="member_login_status")
-    private Boolean memberLoginStatus;
+    private Boolean loginStatus;
 
 }

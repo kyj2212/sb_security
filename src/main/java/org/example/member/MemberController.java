@@ -29,7 +29,6 @@ public class MemberController {
             return "signup_form";
         }
 
-        System.out.println("pw1 : " + memberCreateForm.getMemberPwd1() + " pw2 : " + memberCreateForm.getMemberPwd2());
         if (!memberCreateForm.getMemberPwd1().equals(memberCreateForm.getMemberPwd2())) {
             bindingResult.rejectValue("memberPwd2", "passwordInCorrect",
                     "2개의 패스워드가 일치하지 않습니다.");
