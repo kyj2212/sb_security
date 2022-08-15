@@ -1,7 +1,8 @@
-package org.example.member;
+package org.example.domain.member.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.example.domain.member.entity.Member;
+import org.example.domain.member.repository.MemberRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public Member create(String member_name,String id, String member_pwd, String member_email, Boolean member_login_status) {
+    public Member create(String member_name, String id, String member_pwd, String member_email, Boolean member_login_status) {
         Member member = new Member();
         member.setMemberName(member_name);
         member.setMemberId(id);

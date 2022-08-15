@@ -1,7 +1,10 @@
-package org.example.member;
+package org.example.domain.member.service;
 
 import lombok.RequiredArgsConstructor;
 
+import org.example.domain.member.entity.Member;
+import org.example.domain.member.entity.MemberRole;
+import org.example.domain.member.repository.MemberRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

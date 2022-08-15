@@ -1,4 +1,4 @@
-package org.example.member;
+package org.example.domain.member;
 
 import lombok.Getter;
 import lombok.Setter;
