@@ -26,12 +26,16 @@ import org.example.domain.member.service.MemberService;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/accounts")
+@RequestMapping("/member")
 public class MemberController {
 
     private final MemberService memberService;
 
+    @GetMapping(value = "/{username}")
+    public ResponseEntity<ResultResponse> getShadow(@PathVariable("username") String username) {
+        final ShadowResponse shadowResponse = memberService.getShadow(username);
 
-
+        return ResponseEntity.ok(ResultResponse.of(GET_USERPROFILE_SUCCESS, shadowResponse));
+    }
 
 }
