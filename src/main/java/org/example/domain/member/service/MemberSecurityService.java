@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+public class MemberSecurityService{
+
+}
+/*
 @RequiredArgsConstructor
 @Service
 public class MemberSecurityService implements UserDetailsService {
@@ -50,3 +55,5 @@ public class MemberSecurityService implements UserDetailsService {
     }
 
 }
+
+*/
